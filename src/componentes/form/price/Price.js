@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PriceField = ({ value, onChange }) => {
+const PriceField = ({ value, onChange}) => {
   const handleYearChange = (event) => {
         onChange(event.target.value);
       }
