@@ -1,0 +1,32 @@
+.PriceResult {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+  }
+
+  .PriceResult > div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 auto;
+    width: auto;
+    justify-content: center;
+    max-width: 350px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 40px;
+
+  }
+  
+  .PriceResult h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .PriceResult p {
+    margin-bottom: 5px;
+  }

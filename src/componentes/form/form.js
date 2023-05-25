@@ -12,12 +12,16 @@ const Form = () =>{
     const [model, setModel] = useState('');
     const [year, setYear] = useState('');
     const [price, setPrice] = useState('');
-    const [results, setResults] = useState(null);
+    const [results, setResults] = useState('');
     const [error, setError] = useState('');
     const [type, setType] = useState('');
+    const [message, setMessage] = useState('')
 
 
     const handleSubmit = () => {
+        setResults(null)
+        setMessage('')
+        let newMessage = ''
         let newError = ''
         let newType = ''
         const vehicles = {
@@ -28,18 +32,21 @@ const Form = () =>{
         }
 
         if(vehicles){
-            console.log(vehicles)
+            newMessage = 'escolha um codigo e digite no campo Modelo'
             let url = `https://parallelum.com.br/fipe/api/v1/${vehicles.type}/marcas`
             newType = 'marcs'
+            newMessage = 'escolha um codigo e digite no campo do Ano'
             if(vehicles.model){
                 newType = 'model'
                 url = url+`/${vehicles.model}/modelos`
+                newMessage = 'escolha um codigo e digite no campo ID'
                 if(vehicles.year){
                     url = url+`/${vehicles.year}/anos`
-                    newType = 'year'
+                    newType = 'marcs'
                     if(vehicles.price){
-                        url = url+`/2014-3`
+                        url = url+`/${price}`
                         newType = 'price'
+                        newMessage = ''
                     }
                 }
             }
@@ -51,6 +58,7 @@ const Form = () =>{
             }
             setError(newError)
             setType(newType)
+            setMessage(newMessage)
             if(!newError){
                 fetch(url)
                 .then((res) => res.json())
@@ -58,7 +66,6 @@ const Form = () =>{
                     // setResults(data)
                     // console.log(data)
                     if (data.error) {
-                        setResults(null); // Define o estado como null quando não há dados correspondentes
                         setError("Não foram encontrados dados para esta consulta");
                       } else {
                         setResults(data);
@@ -79,6 +86,7 @@ const Form = () =>{
                 <PriceField value={price} onChange={setPrice}/>
                 <SubmitButton onSubmit={handleSubmit} />
                 <Message onMsg={error} />
+                {message && <Message onMsg={message} />}
             </form>
 
             {results !== null && <Result data={results}  onType={type}/>}
