@@ -51,15 +51,17 @@ const Form = () =>{
                     }
                 }
             }
+            setMessage(newMessage)
             if(vehicles.price && !vehicles.year){
                 newError ='O campo ano não pode estar vazio'
+                setMessage('')
             }
             if(vehicles.year && !vehicles.model){
                 newError = 'o campo modelo não pode estar vazio'
+                setMessage('')
             }
             setError(newError)
             setType(newType)
-            setMessage(newMessage)
             if(!newError){
                 fetch(url)
                 .then((res) => res.json())
@@ -68,6 +70,7 @@ const Form = () =>{
                     // console.log(data)
                     if (data.error) {
                         setError("Não foram encontrados dados para esta consulta");
+                        setMessage('')
                       } else {
                         setResults(data);
                         console.log(data);

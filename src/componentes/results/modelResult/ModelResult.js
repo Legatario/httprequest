@@ -13,7 +13,8 @@ const ModeloResult = ({data}) =>{
             </div>
           ))}
             </div>
-            <div>
+            {/* //esta parte do codigo poderia dar uma informação errada ao usuario optei em deixar sem */}
+            {/* <div>
             <h3>Resultados por modelos:</h3>
           {data.anos.map((result, index) => (
             <div key={index} className="pContainer">
@@ -21,7 +22,7 @@ const ModeloResult = ({data}) =>{
               <p>Codigo: {result.codigo}</p>
             </div>
           ))}
-            </div>
+            </div> */}
         </div>
       );
 }
