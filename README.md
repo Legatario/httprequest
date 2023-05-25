@@ -11,17 +11,7 @@ Este é um projeto de exemplo que demonstra a criação de um formulário utiliz
 
 # Funcionalidades
 
-O formulário contém os seguintes campos:
-
-Nome: campo de texto para inserir o nome do usuário.
-Idade: campo numerico para inserir a idade do usuário.
-Gênero: campo de seleção para escolher o gênero do usuário.
-Email: campo de texto para inserir o email do usuário
-Estado Civil: campo de seleção para escolher o estado civil do usuário.
-Tipo de Documento: campo de seleção dinâmico para escolher o tipo de documento do usuário.
-CPF: campo de texto para inserir o CPF do usuário, com validação de CPF inválido.
-Botão de Envio: botão para enviar o formulário.
-Após o envio do formulário, as informações preenchidas são exibidas em uma seção separada, fornecendo um feedback visual para o usuário.
+A funcionalidade do código é permitir que o usuário preencha um formulário com informações sobre um veículo, como tipo, modelo, ano e ID. Ao clicar no botão "Buscar", é feita uma requisição para uma API externa, obtendo dados relacionados ao veículo preenchido. Esses dados são exibidos na tela, fornecendo informações detalhadas sobre o veículo consultado.
 
 ## Tecnologias Utilizadas
 
@@ -38,7 +28,7 @@ Após o envio do formulário, as informações preenchidas são exibidas em uma 
 2. Faça o download ou clone este repositório.
 3. Navegue até o diretório raiz do projeto.
 4. Execute o seguinte comando para instalar as dependências: npm install
-5. Em seguida, execute o comando para iniciar o aplicativo: npm start
+5. Em seguida, execute o comando para iniciar o aplicativo: npm start ou yarn start
 6. Abra o navegador e acesse [http://localhost:3000](http://localhost:3000) para ver o componente em ação.
 
 

@@ -6,6 +6,7 @@ import ModelField from "./mode/ModelField";
 import PriceField from "./price/Price";
 import Message from "./message/Message";
 import Result from "../results/Result";
+import './Form.css'
 
 const Form = () =>{
     const [vehicleType, setVehicleType] = useState('carros');
@@ -35,14 +36,14 @@ const Form = () =>{
             newMessage = 'escolha um codigo e digite no campo Modelo'
             let url = `https://parallelum.com.br/fipe/api/v1/${vehicles.type}/marcas`
             newType = 'marcs'
-            newMessage = 'escolha um codigo e digite no campo do Ano'
             if(vehicles.model){
                 newType = 'model'
                 url = url+`/${vehicles.model}/modelos`
-                newMessage = 'escolha um codigo e digite no campo ID'
+                newMessage = 'escolha um codigo e digite no campo do Ano'
                 if(vehicles.year){
                     url = url+`/${vehicles.year}/anos`
                     newType = 'marcs'
+                    newMessage = 'escolha um codigo e digite no campo ID'
                     if(vehicles.price){
                         url = url+`/${price}`
                         newType = 'price'
