@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 
-const VehicleTypeField = () =>{
-    const [ vehicleType , setVehicleType ] = useState('');
+const VehicleTypeField = ({ value, onChange }) =>{
 
     const handleTypeChange = (e) =>{
-        setVehicleType(e.target.value)
+        onChange(e.target.value)
     }
 
     return (
         <div>
             <label> Tipo de veículo:</label>
-            <select value={vehicleType} onChange={handleTypeChange}>
+            <select value={value} onChange={handleTypeChange}>
                 <option value={'carros'}>Carros</option>
                 <option value={'motos'}>Motos</option>
                 <option value={'caminhoes'}>Caminhões</option>

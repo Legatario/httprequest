@@ -1,9 +1,11 @@
 import './App.css';
+import React from 'react';
+import Form from './componentes/form/form';
 
 function App() {
   return (
     <div className="App">
-     oi
+     <Form />
     </div>
   );
 }
